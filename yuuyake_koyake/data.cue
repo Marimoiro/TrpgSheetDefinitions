@@ -33,7 +33,7 @@
     omoide : string 
 } @cuetsy(kind="interface")
 
-#Data : {
+Data : {
     stats:{
         henge: int,
         kemono: int,

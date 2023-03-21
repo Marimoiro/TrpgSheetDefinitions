@@ -1,0 +1,79 @@
+{
+    "sample": {
+        "keywords": [
+            {
+                "keyword": "むかし",
+                "color": "#D75674",
+                "override": "",
+                "isKeyword": true
+            },
+            {
+                "keyword": "おじいさん",
+                "color": "#F16056",
+                "override": "",
+                "isKeyword": true
+            },
+            {
+                "keyword": "桃",
+                "color": "#FB8D3D",
+                "override": "",
+                "isKeyword": true
+            },
+            {
+                "keyword": "",
+                "color": "#F9BB2B",
+                "override": "",
+                "isKeyword": true
+            },
+            {
+                "keyword": "",
+                "color": "#D9C81B",
+                "override": "",
+                "isKeyword": true
+            },
+            {
+                "keyword": "",
+                "color": "#76BB4C",
+                "override": "",
+                "isKeyword": true
+            },
+            {
+                "keyword": "",
+                "color": "#00A583",
+                "override": "",
+                "isKeyword": true
+            },
+            {
+                "keyword": "",
+                "color": "#0094A1",
+                "override": "",
+                "isKeyword": true
+            },
+            {
+                "keyword": "",
+                "color": "#007DAF",
+                "override": "",
+                "isKeyword": true
+            },
+            {
+                "keyword": "",
+                "color": "#4D73BB",
+                "override": "",
+                "isKeyword": true
+            },
+            {
+                "keyword": "",
+                "color": "#8B63AC",
+                "override": "",
+                "isKeyword": true
+            },
+            {
+                "keyword": "",
+                "color": "#AB5792",
+                "override": "",
+                "isKeyword": true
+            }
+        ],
+        "story": "むかしむかしあるところにおじいさんとおばあさんがいました。\nおばあさんが川で洗濯をしていると大きな桃がどんぶらこどんぶらこと流れてきました。"
+    }
+}
