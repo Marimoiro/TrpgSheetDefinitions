@@ -48,7 +48,7 @@ function List-AllSystems
         [string]$rootDirectory = $root
     )
     
-    Get-ChildItem -Name -Directory -Path $rootDirectory | Where-Object { $_ -ne "scripts" }
+    Get-ChildItem -Name -Directory -Path $rootDirectory | Where-Object { $_ -ne "scripts" } | Where-Object { $_ -ne "systems" }
     
 }
 
