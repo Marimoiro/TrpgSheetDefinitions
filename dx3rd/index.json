@@ -1,1 +1,173 @@
-{}
+{
+    "Default": {
+        "profile": {
+            "name": "",
+            "age": "",
+            "codeName": "",
+            "player": "",
+            "sexuality": "",
+            "bloodType": "",
+            "zodiac": "",
+            "height": "",
+            "weight": ""
+        },
+        "mainStatuses": {
+            "syndrome1": {
+                "name": "",
+                "status": {
+                    "nikutai": 0,
+                    "kankaku": 0,
+                    "seishin": 0,
+                    "tisei": 0
+                }
+            },
+            "syndrome2": {
+                "name": "",
+                "status": {
+                    "nikutai": 0,
+                    "kankaku": 0,
+                    "seishin": 0,
+                    "tisei": 0
+                }
+            },
+            "optionalSyndrome": {
+                "name": "",
+                "status": {
+                    "nikutai": 0,
+                    "kankaku": 0,
+                    "seishin": 0,
+                    "tisei": 0
+                }
+            },
+            "works": {
+                "name": "",
+                "status": {
+                    "nikutai": 0,
+                    "kankaku": 0,
+                    "seishin": 0,
+                    "tisei": 0
+                }
+            },
+            "byExp": {
+                "nikutai": 0,
+                "kankaku": 0,
+                "seishin": 0,
+                "tisei": 0
+            },
+            "droyce": {
+                "nikutai": 0,
+                "kankaku": 0,
+                "seishin": 0,
+                "tisei": 0
+            },
+            "other": {
+                "nikutai": 0,
+                "kankaku": 0,
+                "seishin": 0,
+                "tisei": 0
+            }
+        },
+        "subStatus": {
+            "maxHp": 0,
+            "zyoubi": 0,
+            "zaisan": 0,
+            "actionPoint": 0,
+            "move": 0,
+            "maxMove": 0
+        },
+        "lifePaths": {
+            "syutuji": {
+                "name": "",
+                "subject": "",
+                "memo": ""
+            },
+            "keiken": {
+                "name": "",
+                "subject": "",
+                "memo": ""
+            },
+            "kaikou": {
+                "name": "",
+                "subject": "",
+                "memo": ""
+            },
+            "kakusei": {
+                "name": "",
+                "subject": "",
+                "memo": ""
+            },
+            "syoudou": {
+                "name": "",
+                "subject": "",
+                "memo": ""
+            }
+        },
+        "skills": {
+            "hakuhei": {
+                "status": "nikutai",
+                "name": "hakuhei",
+                "value": 0
+            },
+            "kaihi": {
+                "status": "nikutai",
+                "name": "kougeki",
+                "value": 0
+            },
+            "syageki": {
+                "status": "kankaku",
+                "name": "syageki",
+                "value": 0
+            },
+            "tikaku": {
+                "status": "kankaku",
+                "name": "tikaku",
+                "value": 0
+            },
+            "rc": {
+                "status": "seishin",
+                "name": "rc",
+                "value": 0
+            },
+            "ishi": {
+                "status": "seishin",
+                "name": "ishi",
+                "value": 0
+            },
+            "kousyou": {
+                "status": "tisei",
+                "name": "kousyou",
+                "value": 0
+            },
+            "chotatsu": {
+                "status": "tisei",
+                "name": "chotatsu",
+                "value": 0
+            },
+            "nikutais": [],
+            "kankakus": [],
+            "seishins": [],
+            "tiseis": []
+        },
+        "royces": [],
+        "effect": [
+            {
+                "type": "Normal",
+                "name": "コンセントレイト",
+                "lv": 2,
+                "timigng": "メジャー",
+                "skill": "ｼﾝﾄﾞﾛｰﾑ",
+                "difficult": "",
+                "subject": "",
+                "range": "",
+                "sinsyoku": "2",
+                "limitation": "",
+                "limitationCount": "",
+                "calc": "",
+                "memo": "C値-1"
+            }
+        ],
+        "combos": [],
+        "items": [],
+        "memo": ""
+    }
+}

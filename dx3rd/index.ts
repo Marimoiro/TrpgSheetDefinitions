@@ -1,11 +1,12 @@
 
 export interface Profile {
   age: string;
+  bloodType: string;
   codeName: string;
   height: string;
   name: string;
   player: string;
-  sexsuality: string;
+  sexuality: string;
   weight: string;
   zodiac: string;
 }
@@ -141,7 +142,7 @@ export interface Data {
     effectIndices: Array<number>;
     timigng: string;
     skill: string;
-    difiicult: string;
+    difficult: string;
     dice: string;
   }>;
   effect: Array<{
@@ -150,7 +151,7 @@ export interface Data {
     lv: number;
     timigng: string;
     skill: string;
-    difiicult: string;
+    difficult: string;
     subject: string;
     range: string;
     sinsyoku: string;
