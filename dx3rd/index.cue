@@ -17,7 +17,7 @@
     nikutai: number,
     kankaku: number,
     seishin: number,
-    tisei: number,
+    syakai: number,
 } @cuetsy(kind="interface")
 
 #Syndrome : {
@@ -66,7 +66,7 @@
 } @cuetsy(kind="interface")
 
 #Skill : {
-    status : "nikutai" | "kankaku" | "seishin" | "tisei",
+    status : "nikutai" | "kankaku" | "seishin" | "syakai",
     name: string,
     value: number
 } @cuetsy(kind="interface")
@@ -78,12 +78,12 @@
     tikaku : #Skill & { status: "kankaku", name : "tikaku" },
     rc : #Skill & { status: "seishin", name : "rc" },
     ishi : #Skill & { status: "seishin", name : "ishi" },
-    kousyou : #Skill & { status: "tisei", name : "kousyou" },
-    chotatsu : #Skill & { status: "tisei", name : "chotatsu" },
+    kousyou : #Skill & { status: "syakai", name : "kousyou" },
+    chotatsu : #Skill & { status: "syakai", name : "chotatsu" },
     nikutais : [... #Skill & { status: "nikutai" }],
     kankakus : [... #Skill & { status: "kankaku" }],
     seishins : [... #Skill & { status: "seishin" }],
-    tiseis : [... #Skill & { status: "tisei" }],
+    syakais : [... #Skill & { status: "syakai" }],
 } @cuetsy(kind="interface")
 
 
@@ -161,7 +161,7 @@ Default : #Data & {
 				nikutai: 0,
 				kankaku: 0,
 				seishin: 0,
-				tisei: 0,
+				syakai: 0,
 			},
 		},
 		syndrome2 : {
@@ -170,7 +170,7 @@ Default : #Data & {
 				nikutai: 0,
 				kankaku: 0,
 				seishin: 0,
-				tisei: 0,
+				syakai: 0,
 			},
 		},
 		optionalSyndrome : {
@@ -179,7 +179,7 @@ Default : #Data & {
 				nikutai: 0,
 				kankaku: 0,
 				seishin: 0,
-				tisei: 0,
+				syakai: 0,
 			},
 		},
 		works : {
@@ -188,26 +188,26 @@ Default : #Data & {
 				nikutai: 0,
 				kankaku: 0,
 				seishin: 0,
-				tisei: 0,
+				syakai: 0,
 			},
 		},
 		byExp : {
 			nikutai: 0,
 			kankaku: 0,
 			seishin: 0,
-			tisei: 0,
+			syakai: 0,
 		},
 		droyce : {
 			nikutai: 0,
 			kankaku: 0,
 			seishin: 0,
-			tisei: 0,
+			syakai: 0,
 		},
 		other : {
 			nikutai: 0,
 			kankaku: 0,
 			seishin: 0,
-			tisei: 0,
+			syakai: 0,
 		},
 	},
 	subStatus : {
@@ -277,19 +277,19 @@ Default : #Data & {
 			value: 0,
 		},
 		kousyou : {
-			status: "tisei",
+			status: "syakai",
 			name : "kousyou",
 			value: 0,
 		},
 		chotatsu : {
-			status: "tisei",
+			status: "syakai",
 			name : "chotatsu",
 			value: 0,
 		},
 		nikutais : [],
 		kankakus : [],
 		seishins : [],
-		tiseis : [],
+		syakais : [],
 	},
 	royces : [],
 	effect : [

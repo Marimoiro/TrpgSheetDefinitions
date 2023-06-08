@@ -15,7 +15,7 @@ export interface MainStatus {
   kankaku: number;
   nikutai: number;
   seishin: number;
-  tisei: number;
+  syakai: number;
 }
 
 export interface Syndrome {
@@ -63,13 +63,13 @@ export interface LifePaths {
 
 export interface Skill {
   name: string;
-  status: ('nikutai' | 'kankaku' | 'seishin' | 'tisei');
+  status: ('nikutai' | 'kankaku' | 'seishin' | 'syakai');
   value: number;
 }
 
 export interface Skills {
   chotatsu: {
-    status: 'tisei';
+    status: 'syakai';
     name: 'chotatsu';
     value: number;
   };
@@ -94,7 +94,7 @@ export interface Skills {
     value: number;
   }>;
   kousyou: {
-    status: 'tisei';
+    status: 'syakai';
     name: 'kousyou';
     value: number;
   };
@@ -118,23 +118,23 @@ export interface Skills {
     name: 'syageki';
     value: number;
   };
+  syakais: Array<{
+    status: 'syakai';
+    name: string;
+    value: number;
+  }>;
   tikaku: {
     status: 'kankaku';
     name: 'tikaku';
     value: number;
   };
-  tiseis: Array<{
-    status: 'tisei';
-    name: string;
-    value: number;
-  }>;
 }
 
 export const defaultSkills: Partial<Skills> = {
   kankakus: [],
   nikutais: [],
   seishins: [],
-  tiseis: [],
+  syakais: [],
 };
 
 export interface Data {

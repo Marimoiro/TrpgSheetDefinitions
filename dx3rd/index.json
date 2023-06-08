@@ -18,7 +18,7 @@
                     "nikutai": 0,
                     "kankaku": 0,
                     "seishin": 0,
-                    "tisei": 0
+                    "syakai": 0
                 }
             },
             "syndrome2": {
@@ -27,7 +27,7 @@
                     "nikutai": 0,
                     "kankaku": 0,
                     "seishin": 0,
-                    "tisei": 0
+                    "syakai": 0
                 }
             },
             "optionalSyndrome": {
@@ -36,7 +36,7 @@
                     "nikutai": 0,
                     "kankaku": 0,
                     "seishin": 0,
-                    "tisei": 0
+                    "syakai": 0
                 }
             },
             "works": {
@@ -45,26 +45,26 @@
                     "nikutai": 0,
                     "kankaku": 0,
                     "seishin": 0,
-                    "tisei": 0
+                    "syakai": 0
                 }
             },
             "byExp": {
                 "nikutai": 0,
                 "kankaku": 0,
                 "seishin": 0,
-                "tisei": 0
+                "syakai": 0
             },
             "droyce": {
                 "nikutai": 0,
                 "kankaku": 0,
                 "seishin": 0,
-                "tisei": 0
+                "syakai": 0
             },
             "other": {
                 "nikutai": 0,
                 "kankaku": 0,
                 "seishin": 0,
-                "tisei": 0
+                "syakai": 0
             }
         },
         "subStatus": {
@@ -134,19 +134,19 @@
                 "value": 0
             },
             "kousyou": {
-                "status": "tisei",
+                "status": "syakai",
                 "name": "kousyou",
                 "value": 0
             },
             "chotatsu": {
-                "status": "tisei",
+                "status": "syakai",
                 "name": "chotatsu",
                 "value": 0
             },
             "nikutais": [],
             "kankakus": [],
             "seishins": [],
-            "tiseis": []
+            "syakais": []
         },
         "royces": [],
         "effect": [
