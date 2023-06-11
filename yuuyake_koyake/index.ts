@@ -53,7 +53,7 @@ export interface Data {
     kodomo: number;
     otona: number;
   };
-  kihonTokugis: Array<Array<KihonTokugi>>;
+  kihonTokugis: Array<KihonTokugi>;
   profile: Profile;
   stats: {
     henge: number;
