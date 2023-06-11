@@ -766,6 +766,69 @@
         "ookami": "よいやみこみち p.94",
         "kame": "よいやみこみち p.98"
     },
+    "default": {
+        "stats": {
+            "henge": 0,
+            "kemono": 0,
+            "kodomo": 0,
+            "otona": 0
+        },
+        "exStats": {
+            "henge": 0,
+            "kemono": 0,
+            "kodomo": 0,
+            "otona": 0
+        },
+        "profile": {
+            "name": "",
+            "syotaiEx": false,
+            "syotai": "狐",
+            "age": "",
+            "sexsuality": "",
+            "player": "",
+            "humanStyle": ""
+        },
+        "kihonTokugis": [
+            {
+                "name": "こあくま",
+                "text": "人間や同種の変化の異性からのつながりに+1。その内容を自由に設定できる",
+                "jakuten": "",
+                "cost": 0
+            },
+            {
+                "name": "おつげ",
+                "text": "語り手に夢の内容をきちんと説明する。相手に夢を見せて自分の【へんげ】≧相手の【おとな】なら行動を操作する",
+                "jakuten": "",
+                "cost": 6
+            },
+            {
+                "name": "ひのたま",
+                "text": "夕方か夜、尻尾を出している時に使用。自分の【へんげ】≧相手の【おとな】なら行動を操作する",
+                "jakuten": "",
+                "cost": 6
+            },
+            {
+                "name": "かくれみの",
+                "text": "場面が変わるか解除するまで、【けもの】が[自分の【けもの】+2]以下のキャラクターからみえなくなる",
+                "jakuten": "",
+                "cost": 8
+            },
+            {
+                "name": "にせもの",
+                "text": "場面が変わるか解除するまで同じくらいの大きさの物の形だけを変化させる。",
+                "jakuten": "",
+                "cost": 10
+            },
+            {
+                "name": "きつねのよめいり",
+                "text": "場面が変わるまで雨を降らせる。雨に当たっている間変化は人間に化けるためのふしぎが必要なくなる。そのうえふしぎと想いをどちらの用途でも使えるようになる",
+                "jakuten": "",
+                "cost": 12
+            }
+        ],
+        "tsuikaTokugis": [],
+        "memo": ""
+    },
     "sample": {
         "stats": {
             "henge": 3,
@@ -826,6 +889,7 @@
                 "cost": 12
             }
         ],
-        "tsuikaTokugis": []
+        "tsuikaTokugis": [],
+        "memo": ""
     }
 }

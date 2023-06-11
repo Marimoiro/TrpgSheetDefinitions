@@ -64,11 +64,11 @@
     profile : #Profile,
     kihonTokugis : [...#KihonTokugi],
     tsuikaTokugis : [...#Tokugi],
-    
+    memo: string
     
 } @cuetsy(kind="interface")
 
-#KihonTokugis : [...#KihonTokugi]git 
+#KihonTokugis : [...#KihonTokugi]
 
 KihonTokugiSet : {
 	kitsune : #KihonTokugis & [
@@ -745,6 +745,33 @@ pages : {
 	
 }
 
+default : #Data & {
+	stats:{
+        henge: 0,
+        kemono: 0,
+        kodomo: 0,
+        otona: 0,
+    },
+    exStats:{
+        henge: 0,
+        kemono: 0,
+        kodomo: 0,
+        otona: 0,
+    },
+	profile : {
+		name: "",
+		syotaiEx: false
+		syotai: "狐",
+		age: "",
+		sexsuality:"",
+		player: "",
+		humanStyle: ""
+    },
+    kihonTokugis : KihonTokugiSet.kitsune
+    memo: ""
+}
+
+
 sample : #Data & {
 	stats:{
         henge: 3,
@@ -768,4 +795,5 @@ sample : #Data & {
 		humanStyle: "着物のおんなのこ"
     },
     kihonTokugis : KihonTokugiSet.kitsune
+    memo: ""
 }
