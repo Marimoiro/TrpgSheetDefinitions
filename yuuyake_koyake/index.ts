@@ -1,11 +1,12 @@
 
 export interface Tokugi {
+  cost: number;
   jakuten: string;
   name: string;
   text: string;
 }
 
-export interface KihonTokugis extends Tokugi {
+export interface KihonTokugi extends Tokugi {
   jakuten: '';
 }
 
@@ -36,25 +37,6 @@ export const defaultMemory: Partial<Memory> = {
   tsunagaris: [],
 };
 
-export interface Data {
-  kihonTokugis: Array<KihonTokugis>;
-  record: Memory;
-  stats: {
-    henge: number;
-    kemono: number;
-    kodomo: number;
-    otona: number;
-  };
-  tsuikaTokugis: Array<Tokugi>;
-  yume: number;
-}
-
-export const defaultData: Partial<Data> = {
-  kihonTokugis: [],
-  tsuikaTokugis: [],
-};
-
-
 export interface Profile {
   age: string;
   humanStyle: string;
@@ -63,4 +45,27 @@ export interface Profile {
   sexsuality: string;
   syotai: string;
 }
+
+export interface Data {
+  exStats: {
+    henge: number;
+    kemono: number;
+    kodomo: number;
+    otona: number;
+  };
+  kihonTokugis: Array<Array<KihonTokugi>>;
+  profile: Profile;
+  stats: {
+    henge: number;
+    kemono: number;
+    kodomo: number;
+    otona: number;
+  };
+  tsuikaTokugis: Array<Tokugi>;
+}
+
+export const defaultData: Partial<Data> = {
+  kihonTokugis: [],
+  tsuikaTokugis: [],
+};
 

@@ -1,0 +1,36 @@
+{
+    "kihonTokugis": {
+        "kitsune": [
+            {
+                "name": "こあくま",
+                "text": "人間や同種の変化の異性からのつながりに+1。その内容を任意に設定できる",
+                "jakuten": "",
+                "cost": 0
+            }
+        ]
+    },
+    "sample": {
+        "stats": {
+            "henge": 3,
+            "kemono": 2,
+            "kodomo": 1,
+            "otona": 2
+        },
+        "exStats": {
+            "henge": 0,
+            "kemono": 0,
+            "kodomo": 0,
+            "otona": 0
+        },
+        "profile": {
+            "name": "八幡鈴音",
+            "syotai": "狐",
+            "age": "10",
+            "sexsuality": "♀",
+            "player": "gm",
+            "humanStyle": "着物のおんなのこ"
+        },
+        "kihonTokugis": [],
+        "tsuikaTokugis": []
+    }
+}
