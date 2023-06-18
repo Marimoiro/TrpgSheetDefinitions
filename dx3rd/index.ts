@@ -43,6 +43,7 @@ export interface SubStatus {
   maxHp: number;
   maxMove: number;
   move: number;
+  shinsyoku: number;
   zaisan: number;
   zyoubi: number;
 }
@@ -178,7 +179,7 @@ export interface Data {
     memo: string;
   }>;
   skills: Skills;
-  subStatus: SubStatus;
+  subStatuses: Array<SubStatus>;
 }
 
 export const defaultData: Partial<Data> = {
@@ -186,5 +187,6 @@ export const defaultData: Partial<Data> = {
   effect: [],
   items: [],
   royces: [],
+  subStatuses: [],
 };
 

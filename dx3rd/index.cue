@@ -49,6 +49,7 @@
     actionPoint : number,
     move: number,
     maxMove: number,
+    shinsyoku: number,
 } @cuetsy(kind="interface")
 
 #LifePath : {
@@ -132,7 +133,7 @@
 #Data : {
     profile: #Profile,
     mainStatuses: #MainStatuses,
-    subStatus: #SubStatus,
+    subStatuses: [...#SubStatus],
     lifePaths: #LifePaths,
     skills: #Skills,
     royces: [...#Royce],
@@ -141,6 +142,147 @@
     items: [...#Item],
     memo:string
 } @cuetsy(kind="interface")
+
+BaseSyndromes : [...#Syndrome] & [
+	{
+		name: "選択してください",
+		status: {
+			nikutai: 0,
+			kankaku: 0,
+			seishin: 0,
+			syakai: 0,
+		},
+	},
+	{
+		name: "エンジェルハイロウ",
+		status: {
+			nikutai: 0,
+			kankaku: 3,
+			seishin: 1,
+			syakai: 0,
+		},
+	},
+	{
+		name: "バロール",
+		status: {
+			nikutai: 0,
+			kankaku: 1,
+			seishin: 2,
+			syakai: 1,
+		},
+	},
+	{
+		name: "ブラックドッグ",
+		status: {
+			nikutai: 2,
+			kankaku: 1,
+			seishin: 1,
+			syakai: 0,
+		},
+	},
+	{
+		name: "ブラムストーカー"
+		status: {
+			nikutai: 1,
+			kankaku: 2,
+			seishin: 1,
+			syakai: 0,
+		},
+	},
+	{
+		//キュマイラ
+		name: "キュマイラ",
+		status: {
+			nikutai: 3,
+			kankaku: 0,
+			seishin: 0,
+			syakai: 1,
+		},
+	},
+	{
+		//エグザイル
+		name: "エグザイル",
+		status: {
+			nikutai: 2,
+			kankaku: 1,
+			seishin: 0,
+			syakai: 1,
+		},
+	},
+	//ハヌマーン
+	{
+		name: "ハヌマーン",
+		status: {
+			nikutai: 1,
+			kankaku: 1,
+			seishin: 1,
+			syakai: 1,
+		},
+	},
+	//モルフェウス
+	{
+		name: "モルフェウス",
+		status: {
+			nikutai: 1,
+			kankaku: 2,
+			seishin: 0,
+			syakai: 1
+		},
+	},
+	//ノイマン
+	{
+		name: "ノイマン",
+		status: {
+			nikutai: 0,
+			kankaku: 0,
+			seishin: 3,
+			syakai: 1,
+		},
+	},
+	//オルクス
+	{
+		name: "オルクス",
+		status: {
+			nikutai: 0,
+			kankaku: 1,
+			seishin: 1,
+			syakai: 1,
+		},
+	},
+	//サラマンダー
+	{
+		name: "ソラリス",
+		status: {
+			nikutai: 0,
+			kankaku: 0,
+			seishin: 1,
+			syakai: 3,
+		},
+	},
+	//ウロボロス
+	{
+		name: "ウロボロス",
+		status: {
+			nikutai: 1,
+			kankaku: 1,
+			seishin: 2,
+			syakai: 0,
+		},
+	},
+	//アザトース
+	{
+		name: "アザトース",
+		status: {
+			nikutai: 1,
+			kankaku: 0,
+			seishin: 3,
+			syakai: 0,
+		},
+	},
+	
+]
+
+
 
 Default : #Data & {
 	profile: {
@@ -155,33 +297,9 @@ Default : #Data & {
 		weight: "",
 	},
 	mainStatuses : {
-		syndrome1 : {
-			name: "",
-			status: {
-				nikutai: 0,
-				kankaku: 0,
-				seishin: 0,
-				syakai: 0,
-			},
-		},
-		syndrome2 : {
-			name: "",
-			status: {
-				nikutai: 0,
-				kankaku: 0,
-				seishin: 0,
-				syakai: 0,
-			},
-		},
-		optionalSyndrome : {
-			name: "",
-			status: {
-				nikutai: 0,
-				kankaku: 0,
-				seishin: 0,
-				syakai: 0,
-			},
-		},
+		syndrome1 : BaseSyndromes[0],
+		syndrome2 : BaseSyndromes[0],
+		optionalSyndrome :  BaseSyndromes[0],
 		works : {
 			name: "",
 			status: {
@@ -210,14 +328,35 @@ Default : #Data & {
 			syakai: 0,
 		},
 	},
-	subStatus : {
-		maxHp : 0,
-		zyoubi : 0,
-		zaisan : 0,
-		actionPoint : 0,
-		move: 0,
-		maxMove: 0,
-	},
+	subStatuses : [
+		{
+			maxHp : 0,
+			zyoubi : 0,
+			zaisan : 0,
+			actionPoint : 0,
+			move: 0,
+			maxMove: 0,
+			shinsyoku: 0,
+		},
+		{
+			maxHp : 0,
+			zyoubi : 0,
+			zaisan : 0,
+			actionPoint : 0,
+			move: 0,
+			maxMove: 0,
+			shinsyoku: 0,
+		},
+		{
+			maxHp : 0,
+			zyoubi : 0,
+			zaisan : 0,
+			actionPoint : 0,
+			move: 0,
+			maxMove: 0,
+			shinsyoku: 0,
+		}
+	],
 	lifePaths : {
 		syutuji : {
 			name: "",
