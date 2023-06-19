@@ -90,11 +90,20 @@
 
 
 #Royce : {
-    type : "Normal" | "D"| "S" |"E",
+    type : "-" | "D"| "S" |"E",
     subject: string,
     positive: string,
     negative: string,
     memo: string,
+    titus : bool | *false, 
+}
+
+EmptyRoyce : {
+	type : "-",
+	subject: "",
+	positive: "",
+	negative: "",
+	memo: "",
 }
 
 #Effect : {
@@ -430,7 +439,7 @@ Default : #Data & {
 		seishins : [],
 		syakais : [],
 	},
-	royces : [],
+	royces : [EmptyRoyce,EmptyRoyce,EmptyRoyce,EmptyRoyce,EmptyRoyce,EmptyRoyce,EmptyRoyce],
 	effect : [
 		{
 			type : "Normal",

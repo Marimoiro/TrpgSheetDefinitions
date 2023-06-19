@@ -172,11 +172,12 @@ export interface Data {
   memo: string;
   profile: Profile;
   royces: Array<{
-    type: ('Normal' | 'D' | 'S' | 'E');
+    type: ('-' | 'D' | 'S' | 'E');
     subject: string;
     positive: string;
     negative: string;
     memo: string;
+    titus: boolean;
   }>;
   skills: Skills;
   subStatuses: Array<SubStatus>;

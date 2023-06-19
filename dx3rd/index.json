@@ -1,4 +1,11 @@
 {
+    "EmptyRoyce": {
+        "type": "-",
+        "subject": "",
+        "positive": "",
+        "negative": "",
+        "memo": ""
+    },
     "BaseSyndromes": [
         {
             "name": "選択してください",
@@ -297,7 +304,64 @@
             "seishins": [],
             "syakais": []
         },
-        "royces": [],
+        "royces": [
+            {
+                "type": "-",
+                "subject": "",
+                "positive": "",
+                "negative": "",
+                "memo": "",
+                "titus": false
+            },
+            {
+                "type": "-",
+                "subject": "",
+                "positive": "",
+                "negative": "",
+                "memo": "",
+                "titus": false
+            },
+            {
+                "type": "-",
+                "subject": "",
+                "positive": "",
+                "negative": "",
+                "memo": "",
+                "titus": false
+            },
+            {
+                "type": "-",
+                "subject": "",
+                "positive": "",
+                "negative": "",
+                "memo": "",
+                "titus": false
+            },
+            {
+                "type": "-",
+                "subject": "",
+                "positive": "",
+                "negative": "",
+                "memo": "",
+                "titus": false
+            },
+            {
+                "type": "-",
+                "subject": "",
+                "positive": "",
+                "negative": "",
+                "memo": "",
+                "titus": false
+            },
+            {
+                "type": "-",
+                "subject": "",
+                "positive": "",
+                "negative": "",
+                "memo": "",
+                "titus": false
+            }
+        ],
         "effect": [
             {
                 "type": "Normal",
