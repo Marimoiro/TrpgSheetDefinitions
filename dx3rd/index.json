@@ -261,48 +261,94 @@
         "skills": {
             "hakuhei": {
                 "status": "nikutai",
-                "name": "hakuhei",
-                "value": 0
+                "exp": 0,
+                "dice": 0,
+                "other": 0,
+                "memo": ""
             },
             "kaihi": {
                 "status": "nikutai",
-                "name": "kougeki",
-                "value": 0
+                "exp": 0,
+                "dice": 0,
+                "other": 0,
+                "memo": ""
             },
             "syageki": {
                 "status": "kankaku",
-                "name": "syageki",
-                "value": 0
+                "exp": 0,
+                "dice": 0,
+                "other": 0,
+                "memo": ""
             },
             "tikaku": {
                 "status": "kankaku",
-                "name": "tikaku",
-                "value": 0
+                "exp": 0,
+                "dice": 0,
+                "other": 0,
+                "memo": ""
             },
             "rc": {
                 "status": "seishin",
-                "name": "rc",
-                "value": 0
+                "exp": 0,
+                "dice": 0,
+                "other": 0,
+                "memo": ""
             },
             "ishi": {
                 "status": "seishin",
-                "name": "ishi",
-                "value": 0
+                "exp": 0,
+                "dice": 0,
+                "other": 0,
+                "memo": ""
             },
             "kousyou": {
                 "status": "syakai",
-                "name": "kousyou",
-                "value": 0
+                "exp": 0,
+                "dice": 0,
+                "other": 0,
+                "memo": ""
             },
             "chotatsu": {
                 "status": "syakai",
-                "name": "chotatsu",
-                "value": 0
+                "exp": 0,
+                "dice": 0,
+                "other": 0,
+                "memo": ""
             },
-            "nikutais": [],
-            "kankakus": [],
-            "seishins": [],
-            "syakais": []
+            "smallSkills": [
+                {
+                    "status": "nikutai",
+                    "exp": 0,
+                    "dice": 0,
+                    "other": 0,
+                    "name": "",
+                    "memo": ""
+                },
+                {
+                    "status": "kankaku",
+                    "exp": 0,
+                    "dice": 0,
+                    "other": 0,
+                    "name": "",
+                    "memo": ""
+                },
+                {
+                    "status": "seishin",
+                    "exp": 0,
+                    "dice": 0,
+                    "other": 0,
+                    "name": "",
+                    "memo": ""
+                },
+                {
+                    "status": "syakai",
+                    "exp": 0,
+                    "dice": 0,
+                    "other": 0,
+                    "name": "",
+                    "memo": ""
+                }
+            ]
         },
         "royces": [
             {
@@ -370,12 +416,24 @@
                 "timigng": "メジャー",
                 "skill": "ｼﾝﾄﾞﾛｰﾑ",
                 "difficult": "",
-                "subject": "",
-                "range": "",
+                "target": {
+                    "type": "Self",
+                    "value": 0
+                },
+                "range": {
+                    "type": "Self",
+                    "value": 0
+                },
+                "efficacy": [
+                    {
+                        "type": "Critical",
+                        "option": "",
+                        "value": -1
+                    }
+                ],
                 "sinsyoku": "2",
                 "limitation": "",
                 "limitationCount": "",
-                "calc": "",
                 "memo": "C値-1"
             }
         ],

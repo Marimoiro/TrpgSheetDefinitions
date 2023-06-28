@@ -63,79 +63,163 @@ export interface LifePaths {
 }
 
 export interface Skill {
-  name: string;
+  dice: number;
+  exp: number;
+  memo: string;
+  other: number;
   status: ('nikutai' | 'kankaku' | 'seishin' | 'syakai');
-  value: number;
 }
+
+export const defaultSkill: Partial<Skill> = {
+  dice: 0,
+  exp: 0,
+  memo: '',
+  other: 0,
+};
+
+export interface SmallSkill {
+  dice: number;
+  exp: number;
+  memo: string;
+  name: string;
+  other: number;
+  status: ('nikutai' | 'kankaku' | 'seishin' | 'syakai');
+}
+
+export const defaultSmallSkill: Partial<SmallSkill> = {
+  dice: 0,
+  exp: 0,
+  memo: '',
+  other: 0,
+};
 
 export interface Skills {
   chotatsu: {
     status: 'syakai';
-    name: 'chotatsu';
-    value: number;
+    exp: number;
+    dice: number;
+    other: number;
+    memo: string;
   };
   hakuhei: {
     status: 'nikutai';
-    name: 'hakuhei';
-    value: number;
+    exp: number;
+    dice: number;
+    other: number;
+    memo: string;
   };
   ishi: {
     status: 'seishin';
-    name: 'ishi';
-    value: number;
+    exp: number;
+    dice: number;
+    other: number;
+    memo: string;
   };
   kaihi: {
     status: 'nikutai';
-    name: 'kougeki';
-    value: number;
+    exp: number;
+    dice: number;
+    other: number;
+    memo: string;
   };
-  kankakus: Array<{
-    status: 'kankaku';
-    name: string;
-    value: number;
-  }>;
   kousyou: {
     status: 'syakai';
-    name: 'kousyou';
-    value: number;
+    exp: number;
+    dice: number;
+    other: number;
+    memo: string;
   };
-  nikutais: Array<{
-    status: 'nikutai';
-    name: string;
-    value: number;
-  }>;
   rc: {
     status: 'seishin';
-    name: 'rc';
-    value: number;
+    exp: number;
+    dice: number;
+    other: number;
+    memo: string;
   };
-  seishins: Array<{
-    status: 'seishin';
-    name: string;
-    value: number;
-  }>;
+  smallSkills: Array<SmallSkill>;
   syageki: {
     status: 'kankaku';
-    name: 'syageki';
-    value: number;
+    exp: number;
+    dice: number;
+    other: number;
+    memo: string;
   };
-  syakais: Array<{
-    status: 'syakai';
-    name: string;
-    value: number;
-  }>;
   tikaku: {
     status: 'kankaku';
-    name: 'tikaku';
-    value: number;
+    exp: number;
+    dice: number;
+    other: number;
+    memo: string;
   };
 }
 
 export const defaultSkills: Partial<Skills> = {
-  kankakus: [],
-  nikutais: [],
-  seishins: [],
-  syakais: [],
+  smallSkills: [],
+};
+
+export interface Target {
+  type: ('None' | 'Self' | 'One' | 'Many' | 'Count' | 'Scene');
+  value: number;
+}
+
+export const defaultTarget: Partial<Target> = {
+  value: 0,
+};
+
+export interface Range {
+  type: ('None' | 'Close' | 'Meter' | 'Self' | 'Area');
+  value: number;
+}
+
+export const defaultRange: Partial<Range> = {
+  value: 0,
+};
+
+export enum EfficacyType {
+  Critical = 'Critical',
+  Damage = 'Damage',
+  Dice = 'Dice',
+  Heal = 'Heal',
+  TargetSubject = 'TargetSubject',
+}
+
+export interface Efficacy {
+  option: string;
+  type: EfficacyType;
+  value: number;
+}
+
+export const defaultEfficacy: Partial<Efficacy> = {
+  option: '',
+  value: 0,
+};
+
+export interface Effect {
+  difficult: string;
+  efficacy: Array<Efficacy>;
+  limitation: string;
+  limitationCount: string;
+  lv: number;
+  memo: string;
+  name: string;
+  range: Range;
+  sinsyoku: string;
+  skill: string;
+  target: Target;
+  timigng: string;
+  type: ('Normal' | 'auto' | 'D' | 'easy' | 'various');
+}
+
+export const defaultEffect: Partial<Effect> = {
+  efficacy: [],
+  range: {
+    type: 'None',
+    value: 0,
+  },
+  target: {
+    type: 'None',
+    value: 0,
+  },
 };
 
 export interface Data {
@@ -146,21 +230,7 @@ export interface Data {
     difficult: string;
     dice: string;
   }>;
-  effect: Array<{
-    type: ('Normal' | 'auto' | 'D' | 'easy' | 'various');
-    name: string;
-    lv: number;
-    timigng: string;
-    skill: string;
-    difficult: string;
-    subject: string;
-    range: string;
-    sinsyoku: string;
-    limitation: string;
-    limitationCount: string;
-    calc: string;
-    memo: string;
-  }>;
+  effect: Array<Effect>;
   items: Array<{
     name: string;
     memo: string;

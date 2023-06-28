@@ -68,23 +68,32 @@
 
 #Skill : {
     status : "nikutai" | "kankaku" | "seishin" | "syakai",
-    name: string,
-    value: number
+    exp: number | *0
+    dice: number | *0
+    other: number | *0
+    memo: string | *""
 } @cuetsy(kind="interface")
 
+#SmallSkill : {
+	status : "nikutai" | "kankaku" | "seishin" | "syakai",
+    exp: number | *0
+    dice: number | *0
+    other: number | *0
+	name : string,
+	memo: string | *""
+} @cuetsy(kind="interface")
+
+
 #Skills : {
-    hakuhei : #Skill & { status: "nikutai", name : "hakuhei" },
-    kaihi : #Skill & { status: "nikutai", name : "kougeki" },
-    syageki : #Skill & { status: "kankaku", name : "syageki" },
-    tikaku : #Skill & { status: "kankaku", name : "tikaku" },
-    rc : #Skill & { status: "seishin", name : "rc" },
-    ishi : #Skill & { status: "seishin", name : "ishi" },
-    kousyou : #Skill & { status: "syakai", name : "kousyou" },
-    chotatsu : #Skill & { status: "syakai", name : "chotatsu" },
-    nikutais : [... #Skill & { status: "nikutai" }],
-    kankakus : [... #Skill & { status: "kankaku" }],
-    seishins : [... #Skill & { status: "seishin" }],
-    syakais : [... #Skill & { status: "syakai" }],
+    hakuhei : #Skill & { status: "nikutai" },
+    kaihi : #Skill & { status: "nikutai" },
+    syageki : #Skill & { status: "kankaku" },
+    tikaku : #Skill & { status: "kankaku" },
+    rc : #Skill & { status: "seishin" },
+    ishi : #Skill & { status: "seishin" },
+    kousyou : #Skill & { status: "syakai" },
+    chotatsu : #Skill & { status: "syakai" },
+    smallSkills : [...#SmallSkill],
 } @cuetsy(kind="interface")
 
 
@@ -106,6 +115,31 @@ EmptyRoyce : {
 	memo: "",
 }
 
+
+#TargetType : "None" | "Self" | "One" | "Many" | "Count" | "Scene"  //@cuetsy(kind="enum")
+
+#Target : {
+	type : "None" | "Self" | "One" | "Many" | "Count" | "Scene"
+	value : number | *0,
+}@cuetsy(kind="interface")
+
+#RangeType : "None" | "Close" | "Meter" | "Self" | "Area" //@cuetsy(kind="enum")
+
+#Range : {
+	type : "None" | "Close" | "Meter" | "Self" | "Area"
+	value : number | *0,
+}@cuetsy(kind="interface")
+
+#EfficacyType : "Damage" | "Dice" | "Heal" | "Critical" | "TargetSubject" @cuetsy(kind="enum")
+
+#Efficacy : {
+	type : #EfficacyType,
+	option : string | *"",
+	value : number | *0,
+	
+}@cuetsy(kind="interface")
+
+
 #Effect : {
     type : "Normal" | "auto" | "D" | "easy" | "various",
     name: string,
@@ -113,15 +147,14 @@ EmptyRoyce : {
     timigng: string,
     skill: string,
     difficult: string,
-    subject: string,
-    range: string,
     sinsyoku: string,
     limitation: string,
     limitationCount: string
-    calc: string,
+    target : #Target | * { type: "None", value: 0 },
+    range : #Range | * { type: "None", value: 0 },
+    efficacy : [...#Efficacy] | * [],
     memo: string,
-
-}
+} @cuetsy(kind="interface")
 
 #Combo : {
     effectIndices: [...number],
@@ -396,48 +429,48 @@ Default : #Data & {
 	skills : {
 		hakuhei : {
 			status: "nikutai",
-			name : "hakuhei",
-			value: 0,
 		},
 		kaihi : {
 			status: "nikutai",
-			name : "kougeki",
-			value: 0,
+
 		},
 		syageki : {
 			status: "kankaku",
-			name : "syageki",
-			value: 0,
 		},
 		tikaku : {
 			status: "kankaku",
-			name : "tikaku",
-			value: 0,
 		},
 		rc : {
 			status: "seishin",
-			name : "rc",
-			value: 0,
 		},
 		ishi : {
 			status: "seishin",
-			name : "ishi",
-			value: 0,
 		},
 		kousyou : {
 			status: "syakai",
-			name : "kousyou",
-			value: 0,
 		},
 		chotatsu : {
 			status: "syakai",
-			name : "chotatsu",
-			value: 0,
 		},
-		nikutais : [],
-		kankakus : [],
-		seishins : [],
-		syakais : [],
+		smallSkills : [
+			{
+				status: "nikutai",
+				name : "",
+			},
+			{
+				status: "kankaku",
+				name : "",
+			},
+			{
+				status: "seishin",
+				name : "",
+			},
+			{
+				status: "syakai",
+				name : "",
+			},
+
+		]
 	},
 	royces : [EmptyRoyce,EmptyRoyce,EmptyRoyce,EmptyRoyce,EmptyRoyce,EmptyRoyce,EmptyRoyce],
 	effect : [
@@ -448,12 +481,22 @@ Default : #Data & {
 			timigng: "メジャー",
 			skill: "ｼﾝﾄﾞﾛｰﾑ",
 			difficult: "",
-			subject: "",
-			range: "",
+			target: {
+				type: "Self",
+			},
+			range: {
+				type: "Self",
+			},
+			efficacy : [
+				{
+					type: "Critical",
+					value: -1
+				},
+			]
 			sinsyoku: "2",
 			limitation: "",
 			limitationCount: "",
-			calc: "",
+			
 			memo: "C値-1",
 		},
 	],
