@@ -408,9 +408,9 @@
                 "titus": false
             }
         ],
-        "effect": [
+        "effects": [
             {
-                "type": "Normal",
+                "type": "normal",
                 "name": "コンセントレイト",
                 "lv": 2,
                 "timigng": "メジャー",
@@ -434,7 +434,39 @@
                 "sinsyoku": "2",
                 "limitation": "",
                 "limitationCount": "",
-                "memo": "C値-1"
+                "memo": "C値-1",
+                "stackable": {
+                    "attack": {
+                        "value": 0,
+                        "scale": 0,
+                        "lv": 0
+                    },
+                    "heal": {
+                        "value": 0,
+                        "scale": 0,
+                        "lv": 0
+                    },
+                    "guard": {
+                        "value": 0,
+                        "scale": 0,
+                        "lv": 0
+                    },
+                    "armor": {
+                        "value": 0,
+                        "scale": 0,
+                        "lv": 0
+                    },
+                    "hit": {
+                        "value": 0,
+                        "scale": 0,
+                        "lv": 0
+                    },
+                    "critical": {
+                        "value": 0,
+                        "scale": 0,
+                        "lv": 0
+                    }
+                }
             }
         ],
         "combos": [],

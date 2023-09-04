@@ -205,9 +205,96 @@ export interface Effect {
   range: Range;
   sinsyoku: string;
   skill: string;
+  stackable: ({
+    attack: ({
+      value: number;
+      scale: number;
+      lv: number;
+    } | {
+        value: 0;
+        scale: 0;
+        lv: 0;
+      });
+    heal: ({
+      value: number;
+      scale: number;
+      lv: number;
+    } | {
+        value: 0;
+        scale: 0;
+        lv: 0;
+      });
+    guard: ({
+      value: number;
+      scale: number;
+      lv: number;
+    } | {
+        value: 0;
+        scale: 0;
+        lv: 0;
+      });
+    armor: ({
+      value: number;
+      scale: number;
+      lv: number;
+    } | {
+        value: 0;
+        scale: 0;
+        lv: 0;
+      });
+    hit: ({
+      value: number;
+      scale: number;
+      lv: number;
+    } | {
+        value: 0;
+        scale: 0;
+        lv: 0;
+      });
+    critical: ({
+      value: number;
+      scale: number;
+      lv: number;
+    } | {
+        value: 0;
+        scale: 0;
+        lv: 0;
+      });
+  } | {
+      attack: {
+        value: 0;
+        scale: 0;
+        lv: 0;
+      };
+      heal: {
+        value: 0;
+        scale: 0;
+        lv: 0;
+      };
+      guard: {
+        value: 0;
+        scale: 0;
+        lv: 0;
+      };
+      armor: {
+        value: 0;
+        scale: 0;
+        lv: 0;
+      };
+      hit: {
+        value: 0;
+        scale: 0;
+        lv: 0;
+      };
+      critical: {
+        value: 0;
+        scale: 0;
+        lv: 0;
+      };
+    });
   target: Target;
   timigng: string;
-  type: ('Normal' | 'auto' | 'D' | 'easy' | 'various');
+  type: ('normal' | 'auto' | 'd' | 'easy' | 'various');
 }
 
 export const defaultEffect: Partial<Effect> = {
@@ -215,6 +302,38 @@ export const defaultEffect: Partial<Effect> = {
   range: {
     type: 'None',
     value: 0,
+  },
+  stackable: {
+    attack: {
+      value: 0,
+      scale: 0,
+      lv: 0,
+    },
+    heal: {
+      value: 0,
+      scale: 0,
+      lv: 0,
+    },
+    guard: {
+      value: 0,
+      scale: 0,
+      lv: 0,
+    },
+    armor: {
+      value: 0,
+      scale: 0,
+      lv: 0,
+    },
+    hit: {
+      value: 0,
+      scale: 0,
+      lv: 0,
+    },
+    critical: {
+      value: 0,
+      scale: 0,
+      lv: 0,
+    },
   },
   target: {
     type: 'None',
@@ -230,7 +349,7 @@ export interface Data {
     difficult: string;
     dice: string;
   }>;
-  effect: Array<Effect>;
+  effects: Array<Effect>;
   items: Array<{
     name: string;
     memo: string;
@@ -255,7 +374,7 @@ export interface Data {
 
 export const defaultData: Partial<Data> = {
   combos: [],
-  effect: [],
+  effects: [],
   items: [],
   royces: [],
   subStatuses: [],

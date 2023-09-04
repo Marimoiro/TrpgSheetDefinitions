@@ -139,9 +139,29 @@ EmptyRoyce : {
 	
 }@cuetsy(kind="interface")
 
+#ScaledEffect : {
+	value : number | *0,
+	scale : number | *0,
+	lv: number | *0,
+}
+
+#FixedEffect : {
+	value : number | *0,
+}
+
+#DxEffects : {
+	attack : #ScaledEffect | *{ value: 0, scale: 0, lv: 0 },
+	heal: #ScaledEffect | *{ value: 0, scale: 0, lv: 0 },
+	guard : #ScaledEffect | *{ value: 0, scale: 0, lv: 0 },
+	armor : #ScaledEffect | *{ value: 0, scale: 0, lv: 0 },
+	
+	hit : #ScaledEffect | *{ value: 0, scale: 0, lv: 0 },
+	critical : #ScaledEffect | *{ value: 0, scale: 0, lv: 0 },
+	
+}
 
 #Effect : {
-    type : "Normal" | "auto" | "D" | "easy" | "various",
+    type : "normal" | "auto" | "d" | "easy" | "various",
     name: string,
     lv: number,
     timigng: string,
@@ -154,6 +174,7 @@ EmptyRoyce : {
     range : #Range | * { type: "None", value: 0 },
     efficacy : [...#Efficacy] | * [],
     memo: string,
+    stackable : #DxEffects | *{ attack: { value: 0, scale: 0, lv: 0 }, heal: { value: 0, scale: 0, lv: 0 }, guard: { value: 0, scale: 0, lv: 0 }, armor: { value: 0, scale: 0, lv: 0 }, hit: { value: 0, scale: 0, lv: 0 }, critical: { value: 0, scale: 0, lv: 0 } },
 } @cuetsy(kind="interface")
 
 #Combo : {
@@ -179,7 +200,7 @@ EmptyRoyce : {
     lifePaths: #LifePaths,
     skills: #Skills,
     royces: [...#Royce],
-    effect: [...#Effect],
+    effects: [...#Effect],
     combos: [...#Combo],
     items: [...#Item],
     memo:string
@@ -473,9 +494,9 @@ Default : #Data & {
 		]
 	},
 	royces : [EmptyRoyce,EmptyRoyce,EmptyRoyce,EmptyRoyce,EmptyRoyce,EmptyRoyce,EmptyRoyce],
-	effect : [
+	effects : [
 		{
-			type : "Normal",
+			type : "normal",
 			name: "コンセントレイト",
 			lv: 2,
 			timigng: "メジャー",
