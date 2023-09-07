@@ -194,151 +194,82 @@ export const defaultEfficacy: Partial<Efficacy> = {
   value: 0,
 };
 
+export interface DxEffects {
+  armor: {
+    value: number;
+    scale: number;
+    lv: number;
+    valueDice: number;
+    scaleDice: number;
+    plus: boolean;
+    showValue: boolean;
+  };
+  attack: {
+    value: number;
+    scale: number;
+    lv: number;
+    valueDice: number;
+    scaleDice: number;
+    plus: boolean;
+    showValue: boolean;
+  };
+  critical: {
+    value: number;
+    scale: number;
+    lv: number;
+    valueDice: number;
+    scaleDice: number;
+    plus: boolean;
+    showValue: boolean;
+  };
+  guard: {
+    value: number;
+    scale: number;
+    lv: number;
+    valueDice: number;
+    scaleDice: number;
+    plus: boolean;
+    showValue: boolean;
+  };
+  heal: {
+    value: number;
+    scale: number;
+    lv: number;
+    valueDice: number;
+    scaleDice: number;
+    plus: boolean;
+    showValue: boolean;
+  };
+  hit: {
+    value: number;
+    scale: number;
+    lv: number;
+    valueDice: number;
+    scaleDice: number;
+    plus: boolean;
+    showValue: boolean;
+  };
+}
+
 export interface Effect {
   difficult: string;
-  efficacy: Array<Efficacy>;
   limitation: string;
   limitationCount: string;
   lv: number;
   memo: string;
   name: string;
-  range: Range;
+  range: string;
   sinsyoku: string;
   skill: string;
-  stackable: ({
-    attack: ({
-      value: number;
-      scale: number;
-      lv: number;
-    } | {
-        value: 0;
-        scale: 0;
-        lv: 0;
-      });
-    heal: ({
-      value: number;
-      scale: number;
-      lv: number;
-    } | {
-        value: 0;
-        scale: 0;
-        lv: 0;
-      });
-    guard: ({
-      value: number;
-      scale: number;
-      lv: number;
-    } | {
-        value: 0;
-        scale: 0;
-        lv: 0;
-      });
-    armor: ({
-      value: number;
-      scale: number;
-      lv: number;
-    } | {
-        value: 0;
-        scale: 0;
-        lv: 0;
-      });
-    hit: ({
-      value: number;
-      scale: number;
-      lv: number;
-    } | {
-        value: 0;
-        scale: 0;
-        lv: 0;
-      });
-    critical: ({
-      value: number;
-      scale: number;
-      lv: number;
-    } | {
-        value: 0;
-        scale: 0;
-        lv: 0;
-      });
-  } | {
-      attack: {
-        value: 0;
-        scale: 0;
-        lv: 0;
-      };
-      heal: {
-        value: 0;
-        scale: 0;
-        lv: 0;
-      };
-      guard: {
-        value: 0;
-        scale: 0;
-        lv: 0;
-      };
-      armor: {
-        value: 0;
-        scale: 0;
-        lv: 0;
-      };
-      hit: {
-        value: 0;
-        scale: 0;
-        lv: 0;
-      };
-      critical: {
-        value: 0;
-        scale: 0;
-        lv: 0;
-      };
-    });
-  target: Target;
+  stackable: DxEffects;
+  target: string;
   timigng: string;
   type: ('normal' | 'auto' | 'd' | 'easy' | 'various');
 }
 
 export const defaultEffect: Partial<Effect> = {
-  efficacy: [],
-  range: {
-    type: 'None',
-    value: 0,
-  },
-  stackable: {
-    attack: {
-      value: 0,
-      scale: 0,
-      lv: 0,
-    },
-    heal: {
-      value: 0,
-      scale: 0,
-      lv: 0,
-    },
-    guard: {
-      value: 0,
-      scale: 0,
-      lv: 0,
-    },
-    armor: {
-      value: 0,
-      scale: 0,
-      lv: 0,
-    },
-    hit: {
-      value: 0,
-      scale: 0,
-      lv: 0,
-    },
-    critical: {
-      value: 0,
-      scale: 0,
-      lv: 0,
-    },
-  },
-  target: {
-    type: 'None',
-    value: 0,
-  },
+  range: '',
+  target: '',
 };
 
 export interface Data {

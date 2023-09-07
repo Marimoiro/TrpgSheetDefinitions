@@ -143,6 +143,10 @@ EmptyRoyce : {
 	value : number | *0,
 	scale : number | *0,
 	lv: number | *0,
+	valueDice : number | *0,
+	scaleDice : number | *0, 
+	plus : bool | *true,
+	showValue : bool | *true,
 }
 
 #FixedEffect : {
@@ -150,15 +154,15 @@ EmptyRoyce : {
 }
 
 #DxEffects : {
-	attack : #ScaledEffect | *{ value: 0, scale: 0, lv: 0 },
-	heal: #ScaledEffect | *{ value: 0, scale: 0, lv: 0 },
-	guard : #ScaledEffect | *{ value: 0, scale: 0, lv: 0 },
-	armor : #ScaledEffect | *{ value: 0, scale: 0, lv: 0 },
+	attack : #ScaledEffect,
+	heal: #ScaledEffect,
+	guard : #ScaledEffect,
+	armor : #ScaledEffect,
 	
-	hit : #ScaledEffect | *{ value: 0, scale: 0, lv: 0 },
-	critical : #ScaledEffect | *{ value: 0, scale: 0, lv: 0 },
+	hit : #ScaledEffect,
+	critical : #ScaledEffect,
 	
-}
+} @cuetsy(kind="interface")
 
 #Effect : {
     type : "normal" | "auto" | "d" | "easy" | "various",
@@ -170,11 +174,10 @@ EmptyRoyce : {
     sinsyoku: string,
     limitation: string,
     limitationCount: string
-    target : #Target | * { type: "None", value: 0 },
-    range : #Range | * { type: "None", value: 0 },
-    efficacy : [...#Efficacy] | * [],
+    target : string | *"",
+    range : string | *"",
     memo: string,
-    stackable : #DxEffects | *{ attack: { value: 0, scale: 0, lv: 0 }, heal: { value: 0, scale: 0, lv: 0 }, guard: { value: 0, scale: 0, lv: 0 }, armor: { value: 0, scale: 0, lv: 0 }, hit: { value: 0, scale: 0, lv: 0 }, critical: { value: 0, scale: 0, lv: 0 } },
+    stackable : #DxEffects
 } @cuetsy(kind="interface")
 
 #Combo : {
@@ -502,18 +505,8 @@ Default : #Data & {
 			timigng: "メジャー",
 			skill: "ｼﾝﾄﾞﾛｰﾑ",
 			difficult: "",
-			target: {
-				type: "Self",
-			},
-			range: {
-				type: "Self",
-			},
-			efficacy : [
-				{
-					type: "Critical",
-					value: -1
-				},
-			]
+			target: "-",
+			range: "-",
 			sinsyoku: "2",
 			limitation: "",
 			limitationCount: "",

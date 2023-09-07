@@ -416,21 +416,8 @@
                 "timigng": "メジャー",
                 "skill": "ｼﾝﾄﾞﾛｰﾑ",
                 "difficult": "",
-                "target": {
-                    "type": "Self",
-                    "value": 0
-                },
-                "range": {
-                    "type": "Self",
-                    "value": 0
-                },
-                "efficacy": [
-                    {
-                        "type": "Critical",
-                        "option": "",
-                        "value": -1
-                    }
-                ],
+                "target": "-",
+                "range": "-",
                 "sinsyoku": "2",
                 "limitation": "",
                 "limitationCount": "",
@@ -439,32 +426,56 @@
                     "attack": {
                         "value": 0,
                         "scale": 0,
-                        "lv": 0
+                        "lv": 0,
+                        "valueDice": 0,
+                        "scaleDice": 0,
+                        "plus": true,
+                        "showValue": true
                     },
                     "heal": {
                         "value": 0,
                         "scale": 0,
-                        "lv": 0
+                        "lv": 0,
+                        "valueDice": 0,
+                        "scaleDice": 0,
+                        "plus": true,
+                        "showValue": true
                     },
                     "guard": {
                         "value": 0,
                         "scale": 0,
-                        "lv": 0
+                        "lv": 0,
+                        "valueDice": 0,
+                        "scaleDice": 0,
+                        "plus": true,
+                        "showValue": true
                     },
                     "armor": {
                         "value": 0,
                         "scale": 0,
-                        "lv": 0
+                        "lv": 0,
+                        "valueDice": 0,
+                        "scaleDice": 0,
+                        "plus": true,
+                        "showValue": true
                     },
                     "hit": {
                         "value": 0,
                         "scale": 0,
-                        "lv": 0
+                        "lv": 0,
+                        "valueDice": 0,
+                        "scaleDice": 0,
+                        "plus": true,
+                        "showValue": true
                     },
                     "critical": {
                         "value": 0,
                         "scale": 0,
-                        "lv": 0
+                        "lv": 0,
+                        "valueDice": 0,
+                        "scaleDice": 0,
+                        "plus": true,
+                        "showValue": true
                     }
                 }
             }
