@@ -46,7 +46,7 @@
     maxHp : number,
     zyoubi : number,
     zaisan : number,
-    actionPoint : number,
+    initiative : number,
     move: number,
     maxMove: number,
     shinsyoku: number,
@@ -197,8 +197,29 @@ EmptyRoyce : {
     memo: string,
     value: number,
     exp: number,
-}
+    enable: bool,
+    type: string
+} @cuetsy(kind="interface")
 
+
+#Weapon : #Item & {
+	id : string,
+	skill: string,
+	range: string
+	
+	effectLv : number | *0,
+	attack : #ScaledEffect & { enable: true }
+	guard : #ScaledEffect  & { enable: true },
+	hit : #ScaledEffect  & { enable: true },
+} @cuetsy(kind="interface")
+
+
+#Armor : #Item & {
+	initiative: number,
+	dodge: string, 
+	armor:  #ScaledEffect  & { enable: true },
+	
+} @cuetsy(kind="interface")
 
 #Data : {
     profile: #Profile,
