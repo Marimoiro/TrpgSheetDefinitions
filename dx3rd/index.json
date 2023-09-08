@@ -421,7 +421,6 @@
                 "sinsyoku": "2",
                 "limitation": "",
                 "limitationCount": "",
-                "memo": "C値-1",
                 "stackable": {
                     "attack": {
                         "value": 0,
@@ -430,7 +429,18 @@
                         "valueDice": 0,
                         "scaleDice": 0,
                         "plus": true,
-                        "showValue": true
+                        "showValue": true,
+                        "enable": false
+                    },
+                    "damageUp": {
+                        "value": 0,
+                        "scale": 0,
+                        "lv": 0,
+                        "valueDice": 0,
+                        "scaleDice": 0,
+                        "plus": true,
+                        "showValue": true,
+                        "enable": false
                     },
                     "heal": {
                         "value": 0,
@@ -439,7 +449,8 @@
                         "valueDice": 0,
                         "scaleDice": 0,
                         "plus": true,
-                        "showValue": true
+                        "showValue": true,
+                        "enable": false
                     },
                     "guard": {
                         "value": 0,
@@ -448,7 +459,8 @@
                         "valueDice": 0,
                         "scaleDice": 0,
                         "plus": true,
-                        "showValue": true
+                        "showValue": true,
+                        "enable": false
                     },
                     "armor": {
                         "value": 0,
@@ -457,7 +469,18 @@
                         "valueDice": 0,
                         "scaleDice": 0,
                         "plus": true,
-                        "showValue": true
+                        "showValue": true,
+                        "enable": false
+                    },
+                    "damageDown": {
+                        "value": 0,
+                        "scale": 0,
+                        "lv": 0,
+                        "valueDice": 0,
+                        "scaleDice": 0,
+                        "plus": true,
+                        "showValue": true,
+                        "enable": false
                     },
                     "hit": {
                         "value": 0,
@@ -466,18 +489,21 @@
                         "valueDice": 0,
                         "scaleDice": 0,
                         "plus": true,
-                        "showValue": true
+                        "showValue": true,
+                        "enable": false
                     },
                     "critical": {
                         "value": 0,
-                        "scale": 0,
+                        "scale": 1,
                         "lv": 0,
                         "valueDice": 0,
                         "scaleDice": 0,
-                        "plus": true,
-                        "showValue": true
+                        "plus": false,
+                        "showValue": true,
+                        "enable": true
                     }
-                }
+                },
+                "memo": "C値-1"
             }
         ],
         "combos": [],

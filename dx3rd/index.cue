@@ -147,6 +147,7 @@ EmptyRoyce : {
 	scaleDice : number | *0, 
 	plus : bool | *true,
 	showValue : bool | *true,
+	enable : bool | *false,
 }
 
 #FixedEffect : {
@@ -155,12 +156,15 @@ EmptyRoyce : {
 
 #DxEffects : {
 	attack : #ScaledEffect,
+	damageUp : #ScaledEffect,
 	heal: #ScaledEffect,
 	guard : #ScaledEffect,
 	armor : #ScaledEffect,
+	damageDown : #ScaledEffect, 
+	
 	
 	hit : #ScaledEffect,
-	critical : #ScaledEffect,
+	critical : #ScaledEffect & { plus: false },
 	
 } @cuetsy(kind="interface")
 
@@ -511,6 +515,13 @@ Default : #Data & {
 			limitation: "",
 			limitationCount: "",
 			
+			stackable : #DxEffects & {
+				critical : {
+					enable : true,
+					scale : 1,
+					plus : false
+				}
+			},
 			memo: "C値-1",
 		},
 	],

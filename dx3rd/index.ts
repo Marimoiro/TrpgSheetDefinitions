@@ -203,6 +203,7 @@ export interface DxEffects {
     scaleDice: number;
     plus: boolean;
     showValue: boolean;
+    enable: boolean;
   };
   attack: {
     value: number;
@@ -212,6 +213,7 @@ export interface DxEffects {
     scaleDice: number;
     plus: boolean;
     showValue: boolean;
+    enable: boolean;
   };
   critical: {
     value: number;
@@ -219,8 +221,29 @@ export interface DxEffects {
     lv: number;
     valueDice: number;
     scaleDice: number;
+    plus: false;
+    showValue: boolean;
+    enable: boolean;
+  };
+  damageDown: {
+    value: number;
+    scale: number;
+    lv: number;
+    valueDice: number;
+    scaleDice: number;
     plus: boolean;
     showValue: boolean;
+    enable: boolean;
+  };
+  damageUp: {
+    value: number;
+    scale: number;
+    lv: number;
+    valueDice: number;
+    scaleDice: number;
+    plus: boolean;
+    showValue: boolean;
+    enable: boolean;
   };
   guard: {
     value: number;
@@ -230,6 +253,7 @@ export interface DxEffects {
     scaleDice: number;
     plus: boolean;
     showValue: boolean;
+    enable: boolean;
   };
   heal: {
     value: number;
@@ -239,6 +263,7 @@ export interface DxEffects {
     scaleDice: number;
     plus: boolean;
     showValue: boolean;
+    enable: boolean;
   };
   hit: {
     value: number;
@@ -248,6 +273,7 @@ export interface DxEffects {
     scaleDice: number;
     plus: boolean;
     showValue: boolean;
+    enable: boolean;
   };
 }
 
