@@ -6,6 +6,59 @@
         "negative": "",
         "memo": ""
     },
+    "DefaultItem": {
+        "id": "",
+        "name": "",
+        "memo": "",
+        "exp": 0,
+        "cost": 0,
+        "enable": true,
+        "type": ""
+    },
+    "DefaultWeapon": {
+        "id": "",
+        "skill": "",
+        "range": "",
+        "name": "",
+        "memo": "",
+        "exp": 0,
+        "cost": 0,
+        "enable": true,
+        "type": "",
+        "effectLv": 0,
+        "attack": {
+            "value": 0,
+            "scale": 0,
+            "lv": 0
+        },
+        "guard": {
+            "value": 0,
+            "scale": 0,
+            "lv": 0
+        },
+        "hit": {
+            "value": 0,
+            "scale": 0,
+            "lv": 0
+        }
+    },
+    "DefaultArmor": {
+        "id": "",
+        "name": "",
+        "memo": "",
+        "exp": 0,
+        "cost": 0,
+        "enable": true,
+        "type": "",
+        "effectLv": 0,
+        "initiative": 0,
+        "dodge": "",
+        "armor": {
+            "value": 0,
+            "scale": 0,
+            "lv": 0
+        }
+    },
     "BaseSyndromes": [
         {
             "name": "選択してください",
@@ -207,7 +260,7 @@
                 "maxHp": 0,
                 "zyoubi": 0,
                 "zaisan": 0,
-                "actionPoint": 0,
+                "initiative": 0,
                 "move": 0,
                 "maxMove": 0,
                 "shinsyoku": 0
@@ -216,7 +269,7 @@
                 "maxHp": 0,
                 "zyoubi": 0,
                 "zaisan": 0,
-                "actionPoint": 0,
+                "initiative": 0,
                 "move": 0,
                 "maxMove": 0,
                 "shinsyoku": 0
@@ -225,7 +278,7 @@
                 "maxHp": 0,
                 "zyoubi": 0,
                 "zaisan": 0,
-                "actionPoint": 0,
+                "initiative": 0,
                 "move": 0,
                 "maxMove": 0,
                 "shinsyoku": 0
@@ -503,11 +556,14 @@
                         "enable": true
                     }
                 },
-                "memo": "C値-1"
+                "memo": "C値-1",
+                "enable": true
             }
         ],
         "combos": [],
         "items": [],
+        "weapons": [],
+        "armors": [],
         "memo": ""
     }
 }

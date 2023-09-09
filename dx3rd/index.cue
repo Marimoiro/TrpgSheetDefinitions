@@ -164,7 +164,7 @@ EmptyRoyce : {
 	
 	
 	hit : #ScaledEffect,
-	critical : #ScaledEffect & { plus: false },
+	critical : #ScaledEffect,
 	
 } @cuetsy(kind="interface")
 
@@ -181,7 +181,8 @@ EmptyRoyce : {
     target : string | *"",
     range : string | *"",
     memo: string,
-    stackable : #DxEffects
+    stackable : #DxEffects,
+    enable : bool | *true,
 } @cuetsy(kind="interface")
 
 #Combo : {
@@ -192,34 +193,64 @@ EmptyRoyce : {
     dice: string,
 }
 
+
+#LvScaleEffect : {
+	value : number | *0,
+	scale : number | *0,
+	lv: number | *0,
+}
+
 #Item : {
-    name: string,
-    memo: string,
-    value: number,
-    exp: number,
-    enable: bool,
-    type: string
+	id : string | *"",
+    name: string | *"",
+    memo: string | 	*""
+    exp: number | *0,
+    cost: number | *0
+    enable: bool | *true
+    type: string | *""
 } @cuetsy(kind="interface")
 
+DefaultItem : #Item 
 
-#Weapon : #Item & {
-	id : string,
-	skill: string,
-	range: string
+#Weapon : {
+	id : string | *"",
+	skill: string | *"",
+	range: string | *"",
+	
+	name: string | *"",
+    memo: string | *""
+    exp: number | *0,
+    cost: number | *0,
+    enable: bool | *true,
+    type: string | *""
 	
 	effectLv : number | *0,
-	attack : #ScaledEffect & { enable: true }
-	guard : #ScaledEffect  & { enable: true },
-	hit : #ScaledEffect  & { enable: true },
+	attack : #LvScaleEffect ,
+	guard : #LvScaleEffect ,
+	hit : #LvScaleEffect ,
 } @cuetsy(kind="interface")
 
+DefaultWeapon : #Weapon
 
-#Armor : #Item & {
-	initiative: number,
-	dodge: string, 
-	armor:  #ScaledEffect  & { enable: true },
+
+#Armor : {
+	id : string | *"",
+	
+	name: string | *"",
+    memo: string | *"",
+    exp: number | *0,
+    cost: number | *0,
+    enable: bool | *true,
+    type: string | *""
+    
+    effectLv : number | *0,
+	initiative: number | *0,
+	dodge: string | *"",
+	armor:  #LvScaleEffect
 	
 } @cuetsy(kind="interface")
+
+DefaultArmor : #Armor
 
 #Data : {
     profile: #Profile,
@@ -231,6 +262,8 @@ EmptyRoyce : {
     effects: [...#Effect],
     combos: [...#Combo],
     items: [...#Item],
+    weapons: [...#Weapon],
+    armors: [...#Armor],
     memo:string
 } @cuetsy(kind="interface")
 
@@ -424,7 +457,7 @@ Default : #Data & {
 			maxHp : 0,
 			zyoubi : 0,
 			zaisan : 0,
-			actionPoint : 0,
+			initiative : 0,
 			move: 0,
 			maxMove: 0,
 			shinsyoku: 0,
@@ -433,7 +466,7 @@ Default : #Data & {
 			maxHp : 0,
 			zyoubi : 0,
 			zaisan : 0,
-			actionPoint : 0,
+			initiative : 0,
 			move: 0,
 			maxMove: 0,
 			shinsyoku: 0,
@@ -442,7 +475,7 @@ Default : #Data & {
 			maxHp : 0,
 			zyoubi : 0,
 			zaisan : 0,
-			actionPoint : 0,
+			initiative : 0,
 			move: 0,
 			maxMove: 0,
 			shinsyoku: 0,
@@ -550,3 +583,5 @@ Default : #Data & {
 	items : [],
 	memo: "",
 }
+
+

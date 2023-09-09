@@ -39,7 +39,7 @@ export interface MainStatuses {
 }
 
 export interface SubStatus {
-  actionPoint: number;
+  initiative: number;
   maxHp: number;
   maxMove: number;
   move: number;
@@ -221,7 +221,7 @@ export interface DxEffects {
     lv: number;
     valueDice: number;
     scaleDice: number;
-    plus: false;
+    plus: boolean;
     showValue: boolean;
     enable: boolean;
   };
@@ -279,6 +279,7 @@ export interface DxEffects {
 
 export interface Effect {
   difficult: string;
+  enable: boolean;
   limitation: string;
   limitationCount: string;
   lv: number;
@@ -294,11 +295,105 @@ export interface Effect {
 }
 
 export const defaultEffect: Partial<Effect> = {
+  enable: true,
   range: '',
   target: '',
 };
 
+export interface Item {
+  cost: number;
+  enable: boolean;
+  exp: number;
+  id: string;
+  memo: string;
+  name: string;
+  type: string;
+}
+
+export const defaultItem: Partial<Item> = {
+  cost: 0,
+  enable: true,
+  exp: 0,
+  id: '',
+  memo: '',
+  name: '',
+  type: '',
+};
+
+export interface Weapon {
+  attack: {
+    value: number;
+    scale: number;
+    lv: number;
+  };
+  cost: number;
+  effectLv: number;
+  enable: boolean;
+  exp: number;
+  guard: {
+    value: number;
+    scale: number;
+    lv: number;
+  };
+  hit: {
+    value: number;
+    scale: number;
+    lv: number;
+  };
+  id: string;
+  memo: string;
+  name: string;
+  range: string;
+  skill: string;
+  type: string;
+}
+
+export const defaultWeapon: Partial<Weapon> = {
+  cost: 0,
+  effectLv: 0,
+  enable: true,
+  exp: 0,
+  id: '',
+  memo: '',
+  name: '',
+  range: '',
+  skill: '',
+  type: '',
+};
+
+export interface Armor {
+  armor: {
+    value: number;
+    scale: number;
+    lv: number;
+  };
+  cost: number;
+  dodge: string;
+  effectLv: number;
+  enable: boolean;
+  exp: number;
+  id: string;
+  initiative: number;
+  memo: string;
+  name: string;
+  type: string;
+}
+
+export const defaultArmor: Partial<Armor> = {
+  cost: 0,
+  dodge: '',
+  effectLv: 0,
+  enable: true,
+  exp: 0,
+  id: '',
+  initiative: 0,
+  memo: '',
+  name: '',
+  type: '',
+};
+
 export interface Data {
+  armors: Array<Armor>;
   combos: Array<{
     effectIndices: Array<number>;
     timigng: string;
@@ -307,12 +402,7 @@ export interface Data {
     dice: string;
   }>;
   effects: Array<Effect>;
-  items: Array<{
-    name: string;
-    memo: string;
-    value: number;
-    exp: number;
-  }>;
+  items: Array<Item>;
   lifePaths: LifePaths;
   mainStatuses: MainStatuses;
   memo: string;
@@ -327,13 +417,16 @@ export interface Data {
   }>;
   skills: Skills;
   subStatuses: Array<SubStatus>;
+  weapons: Array<Weapon>;
 }
 
 export const defaultData: Partial<Data> = {
+  armors: [],
   combos: [],
   effects: [],
   items: [],
   royces: [],
   subStatuses: [],
+  weapons: [],
 };
 
