@@ -1,4 +1,122 @@
 {
+    "DefaultSkills": {
+        "nikutai": [
+            {
+                "status": "nikutai",
+                "exp": 0,
+                "dice": 0,
+                "other": 0,
+                "name": "白兵",
+                "memo": "",
+                "perExp": 2
+            },
+            {
+                "status": "nikutai",
+                "exp": 0,
+                "dice": 0,
+                "other": 0,
+                "name": "回避",
+                "memo": "",
+                "perExp": 2
+            },
+            {
+                "status": "nikutai",
+                "exp": 0,
+                "dice": 0,
+                "other": 0,
+                "name": "",
+                "memo": "",
+                "perExp": 1
+            }
+        ],
+        "kankaku": [
+            {
+                "status": "kankaku",
+                "exp": 0,
+                "dice": 0,
+                "other": 0,
+                "name": "射撃",
+                "memo": "",
+                "perExp": 2
+            },
+            {
+                "status": "kankaku",
+                "exp": 0,
+                "dice": 0,
+                "other": 0,
+                "name": "知覚",
+                "memo": "",
+                "perExp": 2
+            },
+            {
+                "status": "kankaku",
+                "exp": 0,
+                "dice": 0,
+                "other": 0,
+                "name": "",
+                "memo": "",
+                "perExp": 1
+            }
+        ],
+        "seishin": [
+            {
+                "status": "seishin",
+                "exp": 0,
+                "dice": 0,
+                "other": 0,
+                "name": "RC",
+                "memo": "",
+                "perExp": 2
+            },
+            {
+                "status": "seishin",
+                "exp": 0,
+                "dice": 0,
+                "other": 0,
+                "name": "意思",
+                "memo": "",
+                "perExp": 2
+            },
+            {
+                "status": "seishin",
+                "exp": 0,
+                "dice": 0,
+                "other": 0,
+                "name": "",
+                "memo": "",
+                "perExp": 1
+            }
+        ],
+        "syakai": [
+            {
+                "status": "syakai",
+                "exp": 0,
+                "dice": 0,
+                "other": 0,
+                "name": "交渉",
+                "memo": "",
+                "perExp": 2
+            },
+            {
+                "status": "syakai",
+                "exp": 0,
+                "dice": 0,
+                "other": 0,
+                "name": "調達",
+                "memo": "",
+                "perExp": 2
+            },
+            {
+                "status": "syakai",
+                "exp": 0,
+                "dice": 0,
+                "other": 0,
+                "name": "",
+                "memo": "",
+                "perExp": 1
+            }
+        ]
+    },
     "EmptyRoyce": {
         "type": "-",
         "subject": "",
@@ -13,7 +131,8 @@
         "exp": 0,
         "cost": 0,
         "enable": true,
-        "type": ""
+        "type": "",
+        "status": "owned"
     },
     "DefaultWeapon": {
         "id": "",
@@ -25,6 +144,7 @@
         "cost": 0,
         "enable": true,
         "type": "",
+        "status": "equipped",
         "effectLv": 0,
         "attack": {
             "value": 0,
@@ -50,6 +170,7 @@
         "cost": 0,
         "enable": true,
         "type": "",
+        "status": "equipped",
         "effectLv": 0,
         "initiative": 0,
         "dodge": "",
@@ -312,70 +433,53 @@
             }
         },
         "skills": {
-            "hakuhei": {
-                "status": "nikutai",
-                "exp": 0,
-                "dice": 0,
-                "other": 0,
-                "memo": ""
-            },
-            "kaihi": {
-                "status": "nikutai",
-                "exp": 0,
-                "dice": 0,
-                "other": 0,
-                "memo": ""
-            },
-            "syageki": {
-                "status": "kankaku",
-                "exp": 0,
-                "dice": 0,
-                "other": 0,
-                "memo": ""
-            },
-            "tikaku": {
-                "status": "kankaku",
-                "exp": 0,
-                "dice": 0,
-                "other": 0,
-                "memo": ""
-            },
-            "rc": {
-                "status": "seishin",
-                "exp": 0,
-                "dice": 0,
-                "other": 0,
-                "memo": ""
-            },
-            "ishi": {
-                "status": "seishin",
-                "exp": 0,
-                "dice": 0,
-                "other": 0,
-                "memo": ""
-            },
-            "kousyou": {
-                "status": "syakai",
-                "exp": 0,
-                "dice": 0,
-                "other": 0,
-                "memo": ""
-            },
-            "chotatsu": {
-                "status": "syakai",
-                "exp": 0,
-                "dice": 0,
-                "other": 0,
-                "memo": ""
-            },
-            "smallSkills": [
+            "nikutai": [
+                {
+                    "status": "nikutai",
+                    "exp": 0,
+                    "dice": 0,
+                    "other": 0,
+                    "name": "白兵",
+                    "memo": "",
+                    "perExp": 2
+                },
+                {
+                    "status": "nikutai",
+                    "exp": 0,
+                    "dice": 0,
+                    "other": 0,
+                    "name": "回避",
+                    "memo": "",
+                    "perExp": 2
+                },
                 {
                     "status": "nikutai",
                     "exp": 0,
                     "dice": 0,
                     "other": 0,
                     "name": "",
-                    "memo": ""
+                    "memo": "",
+                    "perExp": 1
+                }
+            ],
+            "kankaku": [
+                {
+                    "status": "kankaku",
+                    "exp": 0,
+                    "dice": 0,
+                    "other": 0,
+                    "name": "射撃",
+                    "memo": "",
+                    "perExp": 2
+                },
+                {
+                    "status": "kankaku",
+                    "exp": 0,
+                    "dice": 0,
+                    "other": 0,
+                    "name": "知覚",
+                    "memo": "",
+                    "perExp": 2
                 },
                 {
                     "status": "kankaku",
@@ -383,7 +487,28 @@
                     "dice": 0,
                     "other": 0,
                     "name": "",
-                    "memo": ""
+                    "memo": "",
+                    "perExp": 1
+                }
+            ],
+            "seishin": [
+                {
+                    "status": "seishin",
+                    "exp": 0,
+                    "dice": 0,
+                    "other": 0,
+                    "name": "RC",
+                    "memo": "",
+                    "perExp": 2
+                },
+                {
+                    "status": "seishin",
+                    "exp": 0,
+                    "dice": 0,
+                    "other": 0,
+                    "name": "意思",
+                    "memo": "",
+                    "perExp": 2
                 },
                 {
                     "status": "seishin",
@@ -391,7 +516,28 @@
                     "dice": 0,
                     "other": 0,
                     "name": "",
-                    "memo": ""
+                    "memo": "",
+                    "perExp": 1
+                }
+            ],
+            "syakai": [
+                {
+                    "status": "syakai",
+                    "exp": 0,
+                    "dice": 0,
+                    "other": 0,
+                    "name": "交渉",
+                    "memo": "",
+                    "perExp": 2
+                },
+                {
+                    "status": "syakai",
+                    "exp": 0,
+                    "dice": 0,
+                    "other": 0,
+                    "name": "調達",
+                    "memo": "",
+                    "perExp": 2
                 },
                 {
                     "status": "syakai",
@@ -399,7 +545,8 @@
                     "dice": 0,
                     "other": 0,
                     "name": "",
-                    "memo": ""
+                    "memo": "",
+                    "perExp": 1
                 }
             ]
         },

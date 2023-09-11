@@ -66,7 +66,9 @@ export interface Skill {
   dice: number;
   exp: number;
   memo: string;
+  name: string;
   other: number;
+  perExp: number;
   status: ('nikutai' | 'kankaku' | 'seishin' | 'syakai');
 }
 
@@ -75,86 +77,53 @@ export const defaultSkill: Partial<Skill> = {
   exp: 0,
   memo: '',
   other: 0,
-};
-
-export interface SmallSkill {
-  dice: number;
-  exp: number;
-  memo: string;
-  name: string;
-  other: number;
-  status: ('nikutai' | 'kankaku' | 'seishin' | 'syakai');
-}
-
-export const defaultSmallSkill: Partial<SmallSkill> = {
-  dice: 0,
-  exp: 0,
-  memo: '',
-  other: 0,
+  perExp: 1,
 };
 
 export interface Skills {
-  chotatsu: {
-    status: 'syakai';
-    exp: number;
-    dice: number;
-    other: number;
-    memo: string;
-  };
-  hakuhei: {
-    status: 'nikutai';
-    exp: number;
-    dice: number;
-    other: number;
-    memo: string;
-  };
-  ishi: {
-    status: 'seishin';
-    exp: number;
-    dice: number;
-    other: number;
-    memo: string;
-  };
-  kaihi: {
-    status: 'nikutai';
-    exp: number;
-    dice: number;
-    other: number;
-    memo: string;
-  };
-  kousyou: {
-    status: 'syakai';
-    exp: number;
-    dice: number;
-    other: number;
-    memo: string;
-  };
-  rc: {
-    status: 'seishin';
-    exp: number;
-    dice: number;
-    other: number;
-    memo: string;
-  };
-  smallSkills: Array<SmallSkill>;
-  syageki: {
+  kankaku: Array<{
+    name: string;
     status: 'kankaku';
     exp: number;
     dice: number;
     other: number;
     memo: string;
-  };
-  tikaku: {
-    status: 'kankaku';
+    perExp: number;
+  }>;
+  nikutai: Array<{
+    name: string;
+    status: 'nikutai';
     exp: number;
     dice: number;
     other: number;
     memo: string;
-  };
+    perExp: number;
+  }>;
+  seishin: Array<{
+    name: string;
+    status: 'seishin';
+    exp: number;
+    dice: number;
+    other: number;
+    memo: string;
+    perExp: number;
+  }>;
+  syakai: Array<{
+    name: string;
+    status: 'syakai';
+    exp: number;
+    dice: number;
+    other: number;
+    memo: string;
+    perExp: number;
+  }>;
 }
 
 export const defaultSkills: Partial<Skills> = {
-  smallSkills: [],
+  kankaku: [],
+  nikutai: [],
+  seishin: [],
+  syakai: [],
 };
 
 export interface Target {
@@ -307,6 +276,7 @@ export interface Item {
   id: string;
   memo: string;
   name: string;
+  status: ('owned' | 'unowned');
   type: string;
 }
 
@@ -317,6 +287,7 @@ export const defaultItem: Partial<Item> = {
   id: '',
   memo: '',
   name: '',
+  status: 'owned',
   type: '',
 };
 
@@ -345,6 +316,7 @@ export interface Weapon {
   name: string;
   range: string;
   skill: string;
+  status: ('equipped' | 'owned' | 'unowned');
   type: string;
 }
 
@@ -358,6 +330,7 @@ export const defaultWeapon: Partial<Weapon> = {
   name: '',
   range: '',
   skill: '',
+  status: 'equipped',
   type: '',
 };
 
@@ -376,6 +349,7 @@ export interface Armor {
   initiative: number;
   memo: string;
   name: string;
+  status: ('equipped' | 'owned' | 'unowned');
   type: string;
 }
 
@@ -389,6 +363,7 @@ export const defaultArmor: Partial<Armor> = {
   initiative: 0,
   memo: '',
   name: '',
+  status: 'equipped',
   type: '',
 };
 

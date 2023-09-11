@@ -67,35 +67,59 @@
 } @cuetsy(kind="interface")
 
 #Skill : {
+	name : string,
     status : "nikutai" | "kankaku" | "seishin" | "syakai",
     exp: number | *0
     dice: number | *0
     other: number | *0
     memo: string | *""
-} @cuetsy(kind="interface")
-
-#SmallSkill : {
-	status : "nikutai" | "kankaku" | "seishin" | "syakai",
-    exp: number | *0
-    dice: number | *0
-    other: number | *0
-	name : string,
-	memo: string | *""
+    perExp : number | *1
 } @cuetsy(kind="interface")
 
 
 #Skills : {
-    hakuhei : #Skill & { status: "nikutai" },
-    kaihi : #Skill & { status: "nikutai" },
-    syageki : #Skill & { status: "kankaku" },
-    tikaku : #Skill & { status: "kankaku" },
-    rc : #Skill & { status: "seishin" },
-    ishi : #Skill & { status: "seishin" },
-    kousyou : #Skill & { status: "syakai" },
-    chotatsu : #Skill & { status: "syakai" },
-    smallSkills : [...#SmallSkill],
+	nikutai : [...#Skill & { status: "nikutai" }],
+	kankaku : [...#Skill & { status: "kankaku" }],
+	seishin : [...#Skill & { status: "seishin" }],
+	syakai : [...#Skill & { status: "syakai" }],
 } @cuetsy(kind="interface")
 
+DefaultSkills : #Skills & {
+	nikutai : [
+		// 白兵
+		{ status: "nikutai", exp: 0, dice: 0, other: 0, name: "白兵", memo: "", perExp: 2 },
+		//回避
+		{ status: "nikutai", exp: 0, dice: 0, other: 0, name: "回避", memo: "", perExp: 2 },
+		//空白
+		{ status: "nikutai", exp: 0, dice: 0, other: 0, name: "", memo: "", perExp: 1 },
+		
+	],
+	kankaku : [
+		//射撃
+		{ status: "kankaku", exp: 0, dice: 0, other: 0, name: "射撃", memo: "", perExp: 2 },
+		//知覚
+		{ status: "kankaku", exp: 0, dice: 0, other: 0, name: "知覚", memo: "", perExp: 2 },
+		//空白
+		{ status: "kankaku", exp: 0, dice: 0, other: 0, name: "", memo: "", perExp: 1 },
+	],
+	seishin : [
+		//RC
+		{ status: "seishin", exp: 0, dice: 0, other: 0, name: "RC", memo: "", perExp: 2 },
+		// 意思
+		{ status: "seishin", exp: 0, dice: 0, other: 0, name: "意思", memo: "", perExp: 2 },
+		//空白
+		{ status: "seishin", exp: 0, dice: 0, other: 0, name: "", memo: "", perExp: 1 },
+	],
+	syakai : [
+		//交渉
+		{ status: "syakai", exp: 0, dice: 0, other: 0, name: "交渉", memo: "", perExp: 2 },
+		//調達
+		{ status: "syakai", exp: 0, dice: 0, other: 0, name: "調達", memo: "", perExp: 2 },
+		//空白
+		{ status: "syakai", exp: 0, dice: 0, other: 0, name: "", memo: "", perExp: 1 },
+	],
+	
+}
 
 
 #Royce : {
@@ -208,6 +232,7 @@ EmptyRoyce : {
     cost: number | *0
     enable: bool | *true
     type: string | *""
+    status: *"owned" | "unowned"
 } @cuetsy(kind="interface")
 
 DefaultItem : #Item 
@@ -223,6 +248,8 @@ DefaultItem : #Item
     cost: number | *0,
     enable: bool | *true,
     type: string | *""
+    status: *"equipped" | "owned" | "unowned"
+    
 	
 	effectLv : number | *0,
 	attack : #LvScaleEffect ,
@@ -242,6 +269,8 @@ DefaultWeapon : #Weapon
     cost: number | *0,
     enable: bool | *true,
     type: string | *""
+    
+    status: *"equipped" | "owned" | "unowned"
     
     effectLv : number | *0,
 	initiative: number | *0,
@@ -508,52 +537,7 @@ Default : #Data & {
 			memo: "",
 		},
 	},
-	skills : {
-		hakuhei : {
-			status: "nikutai",
-		},
-		kaihi : {
-			status: "nikutai",
-
-		},
-		syageki : {
-			status: "kankaku",
-		},
-		tikaku : {
-			status: "kankaku",
-		},
-		rc : {
-			status: "seishin",
-		},
-		ishi : {
-			status: "seishin",
-		},
-		kousyou : {
-			status: "syakai",
-		},
-		chotatsu : {
-			status: "syakai",
-		},
-		smallSkills : [
-			{
-				status: "nikutai",
-				name : "",
-			},
-			{
-				status: "kankaku",
-				name : "",
-			},
-			{
-				status: "seishin",
-				name : "",
-			},
-			{
-				status: "syakai",
-				name : "",
-			},
-
-		]
-	},
+	skills : DefaultSkills,
 	royces : [EmptyRoyce,EmptyRoyce,EmptyRoyce,EmptyRoyce,EmptyRoyce,EmptyRoyce,EmptyRoyce],
 	effects : [
 		{
