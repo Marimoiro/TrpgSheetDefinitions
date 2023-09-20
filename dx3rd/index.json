@@ -124,8 +124,186 @@
         "negative": "",
         "memo": ""
     },
+    "DefaultCombo": {
+        "ids": [],
+        "stackable": {
+            "attack": {
+                "value": 0,
+                "scale": 0,
+                "lv": 0,
+                "valueDice": 0,
+                "scaleDice": 0,
+                "plus": true,
+                "showValue": true,
+                "enable": false
+            },
+            "damageUp": {
+                "value": 0,
+                "scale": 0,
+                "lv": 0,
+                "valueDice": 0,
+                "scaleDice": 0,
+                "plus": true,
+                "showValue": true,
+                "enable": false
+            },
+            "heal": {
+                "value": 0,
+                "scale": 0,
+                "lv": 0,
+                "valueDice": 0,
+                "scaleDice": 0,
+                "plus": true,
+                "showValue": true,
+                "enable": false
+            },
+            "guard": {
+                "value": 0,
+                "scale": 0,
+                "lv": 0,
+                "valueDice": 0,
+                "scaleDice": 0,
+                "plus": true,
+                "showValue": true,
+                "enable": false
+            },
+            "armor": {
+                "value": 0,
+                "scale": 0,
+                "lv": 0,
+                "valueDice": 0,
+                "scaleDice": 0,
+                "plus": true,
+                "showValue": true,
+                "enable": false
+            },
+            "damageDown": {
+                "value": 0,
+                "scale": 0,
+                "lv": 0,
+                "valueDice": 0,
+                "scaleDice": 0,
+                "plus": true,
+                "showValue": true,
+                "enable": false
+            },
+            "hit": {
+                "value": 0,
+                "scale": 0,
+                "lv": 0,
+                "valueDice": 0,
+                "scaleDice": 0,
+                "plus": true,
+                "showValue": true,
+                "enable": false
+            },
+            "critical": {
+                "value": 0,
+                "scale": 0,
+                "lv": 0,
+                "valueDice": 0,
+                "scaleDice": 0,
+                "plus": true,
+                "showValue": true,
+                "enable": false
+            }
+        },
+        "aggregate": {
+            "attack": {
+                "value": 0,
+                "scale": 0,
+                "lv": 0,
+                "valueDice": 0,
+                "scaleDice": 0,
+                "plus": true,
+                "showValue": true,
+                "enable": false
+            },
+            "damageUp": {
+                "value": 0,
+                "scale": 0,
+                "lv": 0,
+                "valueDice": 0,
+                "scaleDice": 0,
+                "plus": true,
+                "showValue": true,
+                "enable": false
+            },
+            "heal": {
+                "value": 0,
+                "scale": 0,
+                "lv": 0,
+                "valueDice": 0,
+                "scaleDice": 0,
+                "plus": true,
+                "showValue": true,
+                "enable": false
+            },
+            "guard": {
+                "value": 0,
+                "scale": 0,
+                "lv": 0,
+                "valueDice": 0,
+                "scaleDice": 0,
+                "plus": true,
+                "showValue": true,
+                "enable": false
+            },
+            "armor": {
+                "value": 0,
+                "scale": 0,
+                "lv": 0,
+                "valueDice": 0,
+                "scaleDice": 0,
+                "plus": true,
+                "showValue": true,
+                "enable": false
+            },
+            "damageDown": {
+                "value": 0,
+                "scale": 0,
+                "lv": 0,
+                "valueDice": 0,
+                "scaleDice": 0,
+                "plus": true,
+                "showValue": true,
+                "enable": false
+            },
+            "hit": {
+                "value": 0,
+                "scale": 0,
+                "lv": 0,
+                "valueDice": 0,
+                "scaleDice": 0,
+                "plus": true,
+                "showValue": true,
+                "enable": false
+            },
+            "critical": {
+                "value": 0,
+                "scale": 0,
+                "lv": 0,
+                "valueDice": 0,
+                "scaleDice": 0,
+                "plus": true,
+                "showValue": true,
+                "enable": false
+            }
+        },
+        "name": "",
+        "timigng": "",
+        "skill": "",
+        "difficult": "",
+        "sinsyoku": "",
+        "limitation": "",
+        "limitationCount": "",
+        "target": "",
+        "range": "",
+        "memo": "",
+        "enable": true
+    },
     "DefaultItem": {
-        "id": "",
+        "id": 0,
         "name": "",
         "memo": "",
         "exp": 0,
@@ -135,7 +313,7 @@
         "status": "owned"
     },
     "DefaultWeapon": {
-        "id": "",
+        "id": 0,
         "skill": "",
         "range": "",
         "name": "",
@@ -163,7 +341,7 @@
         }
     },
     "DefaultArmor": {
-        "id": "",
+        "id": 0,
         "name": "",
         "memo": "",
         "exp": 0,
@@ -173,7 +351,7 @@
         "status": "equipped",
         "effectLv": 0,
         "initiative": 0,
-        "dodge": "",
+        "dodge": 0,
         "armor": {
             "value": 0,
             "scale": 0,
@@ -610,6 +788,7 @@
         ],
         "effects": [
             {
+                "id": 1,
                 "type": "normal",
                 "name": "コンセントレイト",
                 "lv": 2,
@@ -711,6 +890,7 @@
         "items": [],
         "weapons": [],
         "armors": [],
-        "memo": ""
+        "memo": "",
+        "currentId": 10
     }
 }

@@ -249,6 +249,7 @@ export interface DxEffects {
 export interface Effect {
   difficult: string;
   enable: boolean;
+  id: number;
   limitation: string;
   limitationCount: string;
   lv: number;
@@ -265,6 +266,31 @@ export interface Effect {
 
 export const defaultEffect: Partial<Effect> = {
   enable: true,
+  id: 0,
+  range: '',
+  target: '',
+};
+
+export interface Combo {
+  aggregate: DxEffects;
+  difficult: string;
+  enable: boolean;
+  ids: Array<number>;
+  limitation: string;
+  limitationCount: string;
+  memo: string;
+  name: string;
+  range: string;
+  sinsyoku: string;
+  skill: string;
+  stackable: DxEffects;
+  target: string;
+  timigng: string;
+}
+
+export const defaultCombo: Partial<Combo> = {
+  enable: true,
+  ids: [],
   range: '',
   target: '',
 };
@@ -273,7 +299,7 @@ export interface Item {
   cost: number;
   enable: boolean;
   exp: number;
-  id: string;
+  id: number;
   memo: string;
   name: string;
   status: ('owned' | 'unowned');
@@ -284,7 +310,7 @@ export const defaultItem: Partial<Item> = {
   cost: 0,
   enable: true,
   exp: 0,
-  id: '',
+  id: 0,
   memo: '',
   name: '',
   status: 'owned',
@@ -311,7 +337,7 @@ export interface Weapon {
     scale: number;
     lv: number;
   };
-  id: string;
+  id: number;
   memo: string;
   name: string;
   range: string;
@@ -325,7 +351,7 @@ export const defaultWeapon: Partial<Weapon> = {
   effectLv: 0,
   enable: true,
   exp: 0,
-  id: '',
+  id: 0,
   memo: '',
   name: '',
   range: '',
@@ -341,11 +367,11 @@ export interface Armor {
     lv: number;
   };
   cost: number;
-  dodge: string;
+  dodge: number;
   effectLv: number;
   enable: boolean;
   exp: number;
-  id: string;
+  id: number;
   initiative: number;
   memo: string;
   name: string;
@@ -355,11 +381,11 @@ export interface Armor {
 
 export const defaultArmor: Partial<Armor> = {
   cost: 0,
-  dodge: '',
+  dodge: 0,
   effectLv: 0,
   enable: true,
   exp: 0,
-  id: '',
+  id: 0,
   initiative: 0,
   memo: '',
   name: '',
@@ -369,13 +395,8 @@ export const defaultArmor: Partial<Armor> = {
 
 export interface Data {
   armors: Array<Armor>;
-  combos: Array<{
-    effectIndices: Array<number>;
-    timigng: string;
-    skill: string;
-    difficult: string;
-    dice: string;
-  }>;
+  combos: Array<Combo>;
+  currentId: number;
   effects: Array<Effect>;
   items: Array<Item>;
   lifePaths: LifePaths;
@@ -398,6 +419,7 @@ export interface Data {
 export const defaultData: Partial<Data> = {
   armors: [],
   combos: [],
+  currentId: 10,
   effects: [],
   items: [],
   royces: [],

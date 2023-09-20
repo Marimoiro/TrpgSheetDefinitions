@@ -193,6 +193,7 @@ EmptyRoyce : {
 } @cuetsy(kind="interface")
 
 #Effect : {
+	id : number | *0,
     type : "normal" | "auto" | "d" | "easy" | "various",
     name: string,
     lv: number,
@@ -210,11 +211,39 @@ EmptyRoyce : {
 } @cuetsy(kind="interface")
 
 #Combo : {
-    effectIndices: [...number],
+    ids: [...number],
+    stackable : #DxEffects,
+    aggregate : #DxEffects,
+    name: string,
     timigng: string,
     skill: string,
     difficult: string,
-    dice: string,
+    sinsyoku: string,
+    limitation: string,
+    limitationCount: string
+    target : string | *"",
+    range : string | *"",
+    memo: string,
+    enable : bool | *true,
+    
+} @cuetsy(kind="interface")
+
+DefaultCombo : #Combo & {
+    ids: [],
+    stackable : #DxEffects,
+    aggregate : #DxEffects,
+    name: "",
+    timigng: "",
+    skill: "",
+    difficult: "",
+    sinsyoku: "",
+    limitation: "",
+    limitationCount: ""
+    target : "",
+    range : "",
+    memo: "",
+    enable : true,
+    
 }
 
 
@@ -225,7 +254,7 @@ EmptyRoyce : {
 }
 
 #Item : {
-	id : string | *"",
+	id : number | *0,
     name: string | *"",
     memo: string | 	*""
     exp: number | *0,
@@ -238,7 +267,7 @@ EmptyRoyce : {
 DefaultItem : #Item 
 
 #Weapon : {
-	id : string | *"",
+	id : number | *0,
 	skill: string | *"",
 	range: string | *"",
 	
@@ -261,7 +290,7 @@ DefaultWeapon : #Weapon
 
 
 #Armor : {
-	id : string | *"",
+	id : number | *0,
 	
 	name: string | *"",
     memo: string | *"",
@@ -274,7 +303,7 @@ DefaultWeapon : #Weapon
     
     effectLv : number | *0,
 	initiative: number | *0,
-	dodge: string | *"",
+	dodge: number | *0,
 	armor:  #LvScaleEffect
 	
 } @cuetsy(kind="interface")
@@ -293,7 +322,8 @@ DefaultArmor : #Armor
     items: [...#Item],
     weapons: [...#Weapon],
     armors: [...#Armor],
-    memo:string
+    memo:string,
+    currentId : number | *10,
 } @cuetsy(kind="interface")
 
 BaseSyndromes : [...#Syndrome] & [
@@ -541,6 +571,7 @@ Default : #Data & {
 	royces : [EmptyRoyce,EmptyRoyce,EmptyRoyce,EmptyRoyce,EmptyRoyce,EmptyRoyce,EmptyRoyce],
 	effects : [
 		{
+			id : 1
 			type : "normal",
 			name: "コンセントレイト",
 			lv: 2,
@@ -566,6 +597,7 @@ Default : #Data & {
 	combos : [],
 	items : [],
 	memo: "",
+	currentId : 10
 }
 
 
